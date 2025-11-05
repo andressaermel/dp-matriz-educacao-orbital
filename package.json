@@ -1,0 +1,54 @@
+{
+	"title": "Matriz Educação",
+	"name": "matriz-educacao",
+	"version": "1.0.0",
+	"description": "Dynamic Page for Matriz Educação.",
+	"homepage": "https://matrizeducacao.com.br",
+	"main": "index.js",
+	"author": {
+		"company": "Orbital",
+		"name": "Wallace Erick",
+		"email": "wallace.erick@orbital.company",
+		"url": "https://orbital.company"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/orbital-code/dynamic-pages/matriz-educacao.git"
+	},
+	"scripts": {
+		"start": "gulp",
+		"build": "gulp build --production",
+		"generate": "gulp assets",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.19.6",
+		"@babel/preset-env": "^7.19.4",
+		"bootstrap": "^5.2.2",
+		"bootstrap-icons": "^1.9.1",
+		"browser-sync": "^2.27.10",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^6.1.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-header-comment": "^0.10.0",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-imagemin": "^5.0.3",
+		"gulp-nunjucks-render": "^2.2.3",
+		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-tinypng-compress": "^1.2.5",
+		"gulp-uglify": "^3.0.2",
+		"gulp-watch": "^5.0.1",
+		"lodash": "^4.17.19",
+		"lodash.mergewith": ">=4.6.2",
+		"maska": "^3.2.0",
+		"mixin-deep": "^2.0.1",
+		"sass": "^1.55.0",
+		"set-value": "^3.0.3"
+	},
+	"resolutions": {
+		"graceful-fs": "^4.2.10"
+	}
+}

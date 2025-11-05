@@ -1,0 +1,155 @@
+// Skeleton
+
+$skeleton-base: #e9ecef
+$skeleton-highlight: #dedede
+$skeleton-radius: 10px
+$skeleton-speed: 1.5s
+
+// Dark mode (opcional)
+@media (prefers-color-scheme: dark)
+  $skeleton-base: #2a2d31
+  $skeleton-highlight: #34383d
+
+@keyframes skeleton-shimmer
+  0%
+    background-position: -200% 0
+  100%
+    background-position: 200% 0
+
+// Mixin base
+=skeleton-base
+  display: inline-block
+  position: relative
+  overflow: hidden
+  border-radius: $skeleton-radius
+  background: $skeleton-base
+  // camada de brilho (shimmer)
+  background-image: linear-gradient(90deg, $skeleton-base 0%, $skeleton-base 40%, $skeleton-highlight 50%, $skeleton-base 60%, $skeleton-base 100%)
+  background-size: 200% 100%
+  animation: skeleton-shimmer $skeleton-speed ease-in-out infinite
+
+// Desabilita animação para acessibilidade
+@media (prefers-reduced-motion: reduce)
+  [data-skeleton],
+  .skeleton,
+  .skeleton.is-animated
+    animation: none
+    background-image: none
+
+// Classe principal
+.skeleton
+  +skeleton-base
+  width: 100%
+  height: 1rem
+  text-indent: -9999px
+  font-size: 0
+
+  &.is-static
+    // versão sem animação
+    animation: none
+    background-image: none
+
+  // Variantes comuns
+  &--text
+    height: 0.9rem
+
+  &--title
+    height: 1.25rem
+
+  &--avatar
+    width: 48px
+    height: 48px
+    border-radius: 50%
+
+  &--circle
+    border-radius: 50%
+
+  &--button
+    height: 40px
+    width: 140px
+    border-radius: 999px
+
+  &--rect
+    // use junto com width/height custom
+    border-radius: $skeleton-radius
+
+// Grupo de linhas de texto (parágrafos)
+.skeleton-group
+  display: grid
+  gap: 10px
+
+  // linhas internas
+  .skeleton-line
+    +skeleton-base
+    height: 0.9rem
+    border-radius: 6px
+
+    &:last-child
+      width: 60%
+
+// Card / bloco
+.skeleton-card
+  display: grid
+  gap: 12px
+  padding: 16px
+  border-radius: 16px
+  background: rgba(0,0,0,0.03)
+
+  @media (prefers-color-scheme: dark)
+    background: rgba(255,255,255,0.03)
+
+  .skeleton-card__media
+    +skeleton-base
+    height: 160px
+    border-radius: 12px
+
+  .skeleton-card__title
+    @extend .skeleton
+    @extend .skeleton--title
+    width: 70%
+
+  .skeleton-card__meta
+    display: grid
+    gap: 8px
+
+    .meta-line
+      @extend .skeleton
+      @extend .skeleton--text
+      width: 45%
+
+// Layouts utilitários
+.skeleton-row
+  display: flex
+  align-items: center
+  gap: 12px
+
+.skeleton-col
+  display: grid
+  gap: 12px
+
+// Tamanhos rápidos
+.skeleton--xs
+  height: 0.6rem
+
+.skeleton--sm
+  height: 0.8rem
+
+.skeleton--lg
+  height: 1.6rem
+
+.skeleton--xl
+  height: 2rem
+
+// Larguras utilitárias
+.w-25
+  width: 25%
+.w-33
+  width: 33.3333%
+.w-50
+  width: 50%
+.w-66
+  width: 66.6667%
+.w-75
+  width: 75%
+.w-100
+  width: 100%

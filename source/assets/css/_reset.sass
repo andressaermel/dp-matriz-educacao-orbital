@@ -1,0 +1,63 @@
+html,
+body
+    height: auto
+    min-height: 100%
+    font-family: $font
+    font-weight: normal
+
+body
+    background: $white
+    overflow-x: hidden
+    overflow-y: auto
+
+.bi
+    fill: currentColor
+
+.active
+    font-weight: 600
+
+.modal-open
+    .hero,
+    .main,
+    .footer
+        filter: blur(3px)
+
+.no-border
+    border: none
+
+.btn
+    padding: 0.55em 3em
+    color: $white
+    font-weight: 600
+    box-shadow: 0 2px 20px rgba($black, 0.4)
+    transition: $transition-base
+    white-space: nowrap
+    text-align: center
+    @include media-breakpoint-up('lg')
+      border-radius: 18px
+    &:hover,
+    &:active,
+    &:focus
+        color: $white !important
+
+.btn-primary,
+.btn-secondary
+    &:hover,
+    &:active,
+    &:focus
+        transform: translateY(-2px)
+    &.is-loading
+        pointer-events: none
+
+.toast
+  border: 0
+  color: $white !important
+  .toast-header
+    border: 0
+    background: transparent !important
+    strong
+      color: $white
+      font-weight: 600
+      font-size: 20px
+  .toast-body
+    padding-top: 0 !important

@@ -1,0 +1,247 @@
+
+// Hero
+.hero
+  $hero-size: 480px
+  @include media-breakpoint-up('lg')
+    background: linear-gradient(to right, white 0%, white 50%, $green 51%, $green 100%)
+  .container
+    position: relative
+    border-radius: 20px
+    margin: $spacer * 0.8
+    width: auto
+    background: linear-gradient(to bottom, $green 0%, $blue 100%)
+    @include media-breakpoint-up('sm')
+      margin: $spacer auto
+    @include media-breakpoint-up('lg')
+      margin: 0 auto
+      background: linear-gradient(to right, $blue 0%, $green 100%)
+      border-radius: 0 0 0 30px
+    @include media-breakpoint-up('xxl')
+      max-width: 90%
+    .col-12
+      @include media-breakpoint-up('lg')
+        min-height: $hero-size
+  &__logos
+    position: relative
+    z-index: 5
+    display: flex
+    justify-content: center
+    gap: 2em
+    align-items: center
+    margin: $spacer * 3 0
+    img
+      @include media-breakpoint-down('md')
+        max-width: 130px
+    @include media-breakpoint-up('lg')
+      margin: 0
+      height: $hero-size
+      padding-right: 2rem
+  &__image
+    position: relative
+    transition: $transition-base
+    bottom: -1px
+    &.is-loading::after
+      margin-left: -2px !important
+    @include media-breakpoint-down('md')
+      &::before
+        content: ''
+        width: auto
+        height: 60%
+        background: #006600
+        border-radius: 30px
+        position: absolute
+        left: $spacer
+        right: $spacer
+        bottom: 0
+        z-index: 0
+        opacity: 1
+    @include media-breakpoint-up('lg')
+      position: absolute
+      top: 0
+      left: 50%
+      width: auto
+      height: 100%
+      transform: translateX(-50%)
+      z-index: 0
+    img
+      display: block
+      height: 100%
+      margin: 0 auto
+      max-width: 100%
+      position: relative
+      z-index: 1
+      opacity: 1
+      transition: $transition-base
+    &.is-loading
+      &::before,
+      img
+        opacity: 0
+  &__title
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin: $spacer * 3 0
+    @include media-breakpoint-up('lg')
+      background: #006600
+      border-radius: 30px
+      height: $hero-size
+      margin: 0
+      padding-left: 2rem
+    h1, p
+      position: relative
+      z-index: 5
+      text-transform: uppercase
+      margin: 0
+      line-height: 1
+    h1
+      color: white
+      font-weight: 800
+      font-style: italic
+      margin-bottom: $spacer
+      @include media-breakpoint-down('md')
+        font-size: 3rem
+    p
+      font-size: 2rem
+      font-weight: 700
+      color: $green
+      width: 250px
+      text-align: center
+      min-height: 30px
+
+// Content
+.content
+  max-width: 1180px
+  margin: 0 auto
+  // margin-bottom: $spacer * 3
+  .display-5
+    line-height: 1
+    height: 100px
+    max-width: 550px
+    strong
+      font-weight: 800
+  &__text
+    margin-top: $spacer * 2
+    .info-list
+      list-style: none
+      margin: 0
+      padding: 0
+      display: flex
+      flex-direction: column
+      .skeleton
+        display: block
+        margin-bottom: 8px
+      li
+        margin-bottom: 8px
+        i:not(.dark)
+          margin-right: 5px
+          color: #006600
+  &__form
+    background: $blue
+    padding: $spacer * 2
+    position: relative
+    border-radius: 20px
+    color: $white
+    @include media-breakpoint-up('lg')
+      top: -80px
+      padding: 3em
+    .btn
+      width: 100%
+      margin-top: 10px
+    .display-7
+      display: block
+      text-align: center
+      font-weight: 600
+      width: 370px
+      height: 65px
+      max-width: 100%
+    .form-label
+      display: block
+      text-align: center
+    .form-label,
+    .form-check-label
+      font-size: 18px
+      font-weight: 500
+    .form-control,
+    .form-select
+      border: 0
+      padding: 0.85rem 1rem
+      border-radius: 17px
+      text-align: center
+    .form-check-label
+      position: relative
+      top: -2px
+    .form-text
+      display: block
+      color: $white
+      font-size: 12px
+      margin: 15px 25px 0
+      a
+        color: inherit
+
+
+// Slider
+.slider-section
+  max-width: 1360px
+  margin: 0 auto
+  border-radius: 30px
+  @include media-breakpoint-down('xxl')
+    margin-left: $spacer
+    margin-right: $spacer
+  .btn
+    // margin-bottom: 30px
+    @include media-breakpoint-up('xl')
+      min-width: 305px
+      // margin-bottom: 55px
+  .display-6
+    font-weight: 800
+    @include media-breakpoint-down('lg')
+      text-align: center
+    span
+      display: block
+      font-weight: normal
+  .carousel
+    .display-7,
+    p
+      color: $black
+    .display-7
+      font-weight: 600
+    p
+      font-weight: normal
+      font-size: 14px
+    .carousel-inner
+      @include media-breakpoint-up('lg')
+        min-height: 100px
+      .col-12
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+      .carousel-item
+        padding-left: $spacer
+    .carousel-indicators
+      margin: -25px 0 0 $spacer
+      display: block
+      position: relative
+      @include media-breakpoint-down('md')
+        margin: 5px auto 25px
+        text-align: center
+      button
+        width: 7px
+        height: 7px
+        border-radius: 100%
+        border: none
+        background: $black
+        opacity: 1
+        transition: $transition-base
+        &.active
+          transform: scale(1.4)
+  img
+    border-radius: 30px
+
+.gradient-matriz
+  background: linear-gradient(250deg, $green 45%, $blue 100%) !important
+  color: $white
+  @include media-breakpoint-down('md')
+    background: linear-gradient(250deg, $green 25%, $blue 100%) !important
+
