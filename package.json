@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"start": "gulp",
-		"build": "gulp build --production --output public",
+		"build": "gulp build --production --output dest",
 		"generate": "gulp assets",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
