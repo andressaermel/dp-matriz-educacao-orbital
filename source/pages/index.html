@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% set content = {
-title: 'Bolsão 2026 - Inscreva-se',
+title: 'Bolsão 2026',
 description: 'Conquiste seu futuro com quem acredita em você! Inscreva-se no Bolsão Matriz 2026 e garanta descontos
-especiais. Próxima prova: 04/10',
+especiais.',
 keywords: 'matriz educação, bolsão 2026, inscrição, educação, ensino fundamental, ensino médio, bangu, campo grande,
 nova iguaçu',
 page: 'home'
@@ -10,16 +10,25 @@ page: 'home'
 
 {% block content %}
 
-<section id="inscricao" class="content">
+<section id="inscricao" class="content js-content">
   <div class="container">
     <div class="row">
-      <div class="col-lg-7 order-2 order-lg-1">
+      <div class="col-lg-7 order-2 order-lg-1 js-text-side-content">
         <div class="content__text">
-          <h2 class="display-5 mb-3 js-page-title">
-            <span>Próxima Prova 04/10</span>
+          <h2 class="display-5 mb-3 js-page-title skeleton">
+            <span>Próxima Prova <span class="js-next-date">04/10</span></span>
             <strong class="d-block">Descontos Especiais</strong>
           </h2>
-          <div class="js-page-content">
+          <div class="js-page-content is-skeleton">
+            <span class="skeleton" style="width: 85%"></span>
+            <span class="mt-4 skeleton"></span>
+            <span class="skeleton"></span>
+            <span class="mt-4 skeleton"></span>
+            <span class="skeleton"></span>
+            <span class="skeleton"></span>
+            <span class="mt-4 skeleton"></span>
+            <span class="skeleton"></span>
+            <span class="my-4 skeleton"></span>
             <p>Conquiste seu futuro com quem acredita em você!</strong></p>
             <p>Com mais de <strong>3.000 aprovações</strong> em concursos militares e vestibulares, temos orgulho de
               promover transformação e mobilidade social através da <strong>alta performance pedagógica.</strong></p>
@@ -30,14 +39,28 @@ page: 'home'
               excelência que une rigor acadêmico, tecnologia, acolhimento e valores que constroem seres humanos.</p>
             <p>Venha fazer parte do Matriz Educação.</p>
           </div>
-          <ul class="info-list js-page-list">
+          <ul class="info-list js-page-list is-skeleton">
+            <span class="skeleton" style="width: 47%"></span>
+            <span class="skeleton" style="width: 22%"></span>
+            <span class="skeleton" style="width: 39%"></span>
+            <span class="skeleton" style="width: 18%"></span>
+            <span class="skeleton" style="width: 50%"></span>
+            <span class="skeleton" style="width: 15%"></span>
+            <span class="skeleton" style="width: 35%"></span>
+            <span class="skeleton" style="width: 53%"></span>
+            <span class="skeleton" style="width: 24%"></span>
+            <span class="skeleton" style="width: 31%"></span>
+            <span class="skeleton" style="width: 49%"></span>
+            <span class="skeleton" style="width: 27%"></span>
+            <span class="skeleton" style="width: 42%"></span>
+            <span class="skeleton" style="width: 33%"></span>
             <li>
               <i class="bi bi-calendar-fill"></i>
-              <span>Sábado: 04/10</span>
+              <span class="js-page-list-date"></span>
             </li>
             <li>
               <i class="bi bi-clock-fill"></i>
-              <span>9h</span>
+              <span class="js-day-time skeleton">9h</span>
             </li>
             <li>
               <i class="bi bi-geo-alt-fill"></i>
@@ -93,108 +116,13 @@ page: 'home'
 
       <div class="col-lg-5 order-1 order-lg-2">
         <div class="content__form">
-          <h3 class="display-7 mb-4 js-form-title">Juntos
+          <h3 class="display-7 mb-4 js-form-title skeleton">Juntos
             transformamos <br>
             seu futuro
             em vitória.</h3>
-          <form id="form" class="registration-form needs-validation" novalidate>
-            <div class="mb-3">
-              <label for="responsavel" class="form-label">Nome do(a) responsável*</label>
-              <input type="text" class="form-control" id="responsavel" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="email" class="form-label">E-mail*</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="celular" class="form-label">Celular (DDD + Telefone)*</label>
-              <input type="tel" class="form-control js-mask" id="celular"
-                data-maska="['(##) ####-####', '(##) #####-####']" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="aluno" class="form-label">Nome do(a) futuro(a) aluno(a)*</label>
-              <input type="text" class="form-control" id="aluno" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="unidade" class="form-label">Unidade*</label>
-              <select class="form-select" id="unidade" required>
-                <option value="" selected disabled></option>
-                <option value="bangu">Bangu</option>
-                <option value="campo-grande">Campo Grande</option>
-                <option value="caxias">Caxias</option>
-                <option value="madureira">Madureira</option>
-                <option value="nova-iguacu">Nova Iguaçu</option>
-                <option value="rocha-miranda">Rocha Miranda</option>
-                <option value="sao-joao-meriti">São João de Meriti</option>
-                <option value="taquara">Taquara</option>
-                <option value="tijuca">Tijuca</option>
-                <option value="retiro-artistas">Retiro dos Artistas</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label for="data-bolsao" class="form-label">Data do bolsão Matriz*</label>
-              <select class="form-select" id="data-bolsao" required>
-                <option value="" selected disabled></option>
-                <option value="18-10-2025">18/10/2025</option>
-                <option value="01-11-2025">01/11/2025</option>
-                <option value="13-11-2025">13/11/2025</option>
-                <option value="22-11-2025">22/11/2025</option>
-                <option value="06-12-2025">06/12/2025</option>
-                <option value="13-12-2025">13/12/2025</option>
-                <option value="20-12-2025">20/12/2025</option>
-                <option value="10-01-2026">10/01/2026</option>
-                <option value="17-01-2026">17/01/2026</option>
-                <option value="24-01-2026">24/01/2026</option>
-                <option value="31-01-2026">31/01/2026</option>
-                <option value="07-02-2026">07/02/2026</option>
-                <option value="28-02-2026">28/02/2026</option>
-                <option value="07-03-2026">07/03/2026</option>
-                <option value="14-03-2026">14/03/2026</option>
-                <option value="21-03-2026">21/03/2026</option>
-                <option value="28-03-2026">28/03/2026</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="terceiro-candidato">
-                <label class="form-check-label" for="terceiro-candidato">
-                  Tem 3° candidato?
-                </label>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="segundo-candidato">
-                <label class="form-check-label" for="segundo-candidato">
-                  Tem 2° candidato?
-                </label>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="termos" required>
-                <label class="form-check-label" for="termos">
-                  Eu li e concordo com os Termos de uso!*
-                </label>
-              </div>
-              <small class="form-text">
-                TERMO DE USO DA PLATAFORMA: <a
-                  href="https://raizeducacao.com.br/politica-de-privacidade-sites-raiz-educacao/" target="_blank"
-                  rel="noopener">https://raiz.click/fxqm</a>
-              </small>
-            </div>
-
-            <button id="btn-inscricao" type="submit" class="btn btn-lg btn-secondary js-form-button">Confirmar
-              inscrição</button>
-          </form>
+          <script src="https://js.hsforms.net/forms/embed/developer/7691970.js" defer></script>
+          <div class="hs-form-html" data-region="na1" data-form-id="93ff28ed-8755-4067-b488-1dfaacd8d9e2"
+            data-portal-id="7691970"></div>
         </div>
       </div>
     </div>

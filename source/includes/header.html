@@ -3,18 +3,24 @@
     <div class="row align-items-center">
       <div class="col-12 col-lg-5">
         <div class="hero__logos">
-          <img src="images/logo-matriz.svg" alt="Matriz Educação" class="logo-matriz">
-          <img src="images/logo-grande.svg" alt="Você pode ser GRANDE" class="logo-grande">
+          <img loading="lazy" decoding="async" src="images/logo-matriz.svg" alt="Matriz Educação" class="logo-matriz">
+          <img loading="lazy" decoding="async" src="images/logo-grande.svg" alt="Você pode ser GRANDE"
+            class="logo-grande">
         </div>
-      </div>
-      <div class="hero__image js-hero-image">
-        <img src="images/aluno-1.png" alt="Estudante Matriz Educação" />
       </div>
       <div class="col-12 col-lg-6 offset-lg-1">
         <div class="hero__title">
           <h1 class="display-5">BOLSÃO 2026</h1>
-          <p class="js-set-label">INSCREVA-SE</p>
+          <p class="js-set-label skeleton">INSCREVA-SE</p>
         </div>
+      </div>
+      <div class="hero__image js-hero-image is-loading">
+        <picture>
+          <source type="image/avif" srcset="images/aluno-1.avif">
+          <source type="image/webp" srcset="images/aluno-1.webp">
+          <img loading="eager" fetchpriority="high" src="images/aluno-1.png" alt="Estudante Matriz Educação" width="480"
+            height="480" />
+        </picture>
       </div>
     </div>
   </div>

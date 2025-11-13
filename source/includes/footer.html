@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row align-items-center pb-5 py-lg-5">
       <div class="col-12 col-md-6 text-center text-md-start d-flex flex-column flex-lg-row flex-row align-items-center">
-        <img src="images/logo-raiz.png" alt="Raiz Educação" class="me-lg-5">
+        <picture class="me-lg-5">
+          <source type="image/avif" srcset="images/logo-raiz.avif">
+          <source type="image/webp" srcset="images/logo-raiz.webp">
+          <img loading="lazy" src="images/logo-raiz.png" alt="Raiz Educação">
+        </picture>
         <p>© Copyright <span class="js-year"></span> Todos os Direitos
           Reservados.</p>
       </div>

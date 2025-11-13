@@ -25,29 +25,38 @@ body
 .no-border
     border: none
 
-.btn
-    padding: 0.55em 3em
-    color: $white
-    font-weight: 600
-    box-shadow: 0 2px 20px rgba($black, 0.4)
-    transition: $transition-base
-    white-space: nowrap
-    text-align: center
+.btn,
+.hsfc-Button
+    padding: 0.55em 3em !important
+    color: $white !important
+    font-weight: 600 !important
+    box-shadow: 0 2px 20px rgba($black, 0.4) !important
+    transition: transform 0.3s ease-out !important
+    white-space: nowrap !important
+    text-align: center !important
     @include media-breakpoint-up('lg')
-      border-radius: 18px
+      border-radius: 18px !important
     &:hover,
     &:active,
     &:focus
         color: $white !important
+
+.hsfc-Button
+    padding: 0.6em 3em !important
+    font-family: $font !important
+    width: 100% !important
+    font-size: 20px !important
+    &.green
+        background: $primary !important
 
 .btn-primary,
 .btn-secondary
     &:hover,
     &:active,
     &:focus
-        transform: translateY(-2px)
+        transform: translateY(-2px) !important
     &.is-loading
-        pointer-events: none
+        pointer-events: none !important
 
 .toast
   border: 0
@@ -61,3 +70,9 @@ body
       font-size: 20px
   .toast-body
     padding-top: 0 !important
+
+.hidden-iframe
+  width: 0
+  height: 0
+  display: none
+  visibility: hidden

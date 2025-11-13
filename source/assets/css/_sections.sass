@@ -26,23 +26,34 @@
     z-index: 5
     display: flex
     justify-content: center
-    gap: 2em
     align-items: center
-    margin: $spacer * 3 0
+    margin: $spacer * 3 auto $spacer * 2
+    @include media-breakpoint-up('lg')
+      gap: 3em
     img
+      max-width: none
       @include media-breakpoint-down('md')
         max-width: 130px
+      @include media-breakpoint-down('xxl')
+        max-height: 90px
     @include media-breakpoint-up('lg')
       margin: 0
       height: $hero-size
       padding-right: 2rem
+    @include media-breakpoint-down('xxl')
+      max-width: 360px
   &__image
     position: relative
     transition: $transition-base
     bottom: -1px
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
     &.is-loading::after
-      margin-left: -2px !important
+      @include media-breakpoint-up('lg')
+        margin-left: -2px !important
     @include media-breakpoint-down('md')
+      margin-bottom: 1.2rem
       &::before
         content: ''
         width: auto
@@ -65,13 +76,13 @@
       z-index: 0
     img
       display: block
-      height: 100%
       margin: 0 auto
       max-width: 100%
       position: relative
       z-index: 1
       opacity: 1
       transition: $transition-base
+      height: auto
     &.is-loading
       &::before,
       img
@@ -81,13 +92,14 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    margin: $spacer * 3 0
+    margin: 0 0 $spacer * 3
     @include media-breakpoint-up('lg')
+      margin: $spacer * 3 0
       background: #006600
       border-radius: 30px
       height: $hero-size
       margin: 0
-      padding-left: 2rem
+      padding-left: 7rem
     h1, p
       position: relative
       z-index: 5
@@ -99,15 +111,21 @@
       font-weight: 800
       font-style: italic
       margin-bottom: $spacer
+      @include media-breakpoint-down('xl')
+        font-size: 2.5rem
       @include media-breakpoint-down('md')
         font-size: 3rem
+        margin-bottom: 0
     p
       font-size: 2rem
       font-weight: 700
       color: $green
-      width: 250px
+      width: 320px
       text-align: center
-      min-height: 30px
+      min-height: 34px
+      @include media-breakpoint-down('md')
+        width: auto
+        min-width: 85%
 
 // Content
 .content
@@ -118,10 +136,17 @@
     line-height: 1
     height: 100px
     max-width: 550px
+    @include media-breakpoint-down('md')
+      height: auto
+      min-height: 60px
     strong
       font-weight: 800
   &__text
     margin-top: $spacer * 2
+    font-size: 18px
+    div.is-skeleton
+      p
+        display: none
     .info-list
       list-style: none
       margin: 0
@@ -136,16 +161,21 @@
         i:not(.dark)
           margin-right: 5px
           color: #006600
+      &.is-skeleton
+        li
+          display: none
   &__form
     background: $blue
     padding: $spacer * 2
     position: relative
     border-radius: 20px
     color: $white
+    min-height: 900px
     @include media-breakpoint-up('lg')
       top: -80px
       padding: 3em
-    .btn
+    .btn,
+    .hsfc-NavigationRow__Buttons
       width: 100%
       margin-top: 10px
     .display-7
@@ -155,19 +185,26 @@
       width: 370px
       height: 65px
       max-width: 100%
-    .form-label
+      margin: 0 auto
+    .form-label,
+    .hsfc-FieldLabel
       display: block
       text-align: center
+      color: $white !important
     .form-label,
-    .form-check-label
-      font-size: 18px
-      font-weight: 500
+    .form-check-label,
+    .hsfc-FieldLabel
+      font-family: $font !important
+      font-size: 18px !important
+      font-weight: 500 !important
+    .hsfc-TextInput,
     .form-control,
     .form-select
-      border: 0
-      padding: 0.85rem 1rem
-      border-radius: 17px
-      text-align: center
+      border: 0 !important
+      padding: 0.85rem 1rem !important
+      border-radius: 17px !important
+      text-align: center !important
+      font-family: $font !important
     .form-check-label
       position: relative
       top: -2px
@@ -245,3 +282,53 @@
   @include media-breakpoint-down('md')
     background: linear-gradient(250deg, $green 25%, $blue 100%) !important
 
+.hsfc-Step__Content,
+.hsfc-RichText,
+.hsfc-DropdownOptions__Search,
+.hsfc-DropdownOptions__List__ListItem
+  font-family: $font !important
+
+.hsfc-Step__Content
+  padding: 0 !important
+  .hsfc-Row
+    position: relative
+  .hsfc-TextInput,
+  .hsfc-EmailField,
+  .hsfc-NumberField
+    position: relative
+    border: 0 !important
+    width: 100% !important
+    margin-bottom: 0 !important
+  .hsfc-CheckboxField label
+    text-align: left !important
+  .hsfc-Row:nth-child(2)
+    display: block !important
+    .hsfc-EmailField
+      margin-bottom: 20px !important
+  .hsfc-DropdownOptions__Search .hsfc-TextInput
+    border: 1px solid $gray-400 !important
+
+  .hsfc-ErrorAlert
+    font-family: $font !important
+    color: $white !important
+    background: $danger !important
+    display: inline-block
+    padding: 3px 10px
+    border-radius: 10px
+    font-size: 12px !important
+    position: absolute
+    right: 15px
+    bottom: -10px
+  .hsfc-FieldDescription
+    font-style: italic
+    margin: 0
+    text-align: right
+    position: absolute
+    z-index: 5
+    right: 10px
+    background: #ffffff
+    padding: 2px 10px
+    color: gray !important
+    border-radius: 10px
+    top: 26px
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5)
